@@ -16,7 +16,7 @@ jobs:
       - name: Checkout reference
         uses: actions/checkout@v4
         with:
-          repository: your-org/matrix-reference
+          repository: RainDmitriy/AIE_matrix_lab
           token: ${{ secrets.REFERENCE_TOKEN }}
           path: reference
 
