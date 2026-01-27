@@ -16,7 +16,7 @@ jobs:
       - name: Checkout reference
         uses: actions/checkout@v4
         with:
-          repository: RainDmitriy/AIE_matrix_lab
+          repository: RainDmitriy/AIE_matrix_lab@master
           token: ${{ secrets.REFERENCE_TOKEN }}
           path: reference
 
@@ -29,10 +29,8 @@ jobs:
             echo "Тесты доступны!"
           fi
 
-      - name: Install dependencies
-        run: pip install pytest
-
       - name: Run tests
         run: |
           echo "Запуск тестов"
-          pytest reference/tests_base_operations.py --tb=short --maxfail=5
+          python -m reference.tests.tests_base_operations
+          python -m reference.tests.tests_lu
